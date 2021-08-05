@@ -390,6 +390,11 @@ public interface WxMaService extends WxService {
 //   */
 //  WxMaShopDeliveryService getShopDeliveryService();
 
+  /**
+   * 返回小程序交易组件-类目服务接口
+   * @return WxMaShopCategoryService
+   */
+  WxMaShopCategoryService getShopCategoryService();
 
   /**
    * 返回小程序交易组件-订单服务接口

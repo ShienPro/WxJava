@@ -403,6 +403,11 @@ public interface WxMaService extends WxService {
   WxMaShopAuditService getShopAuditService();
 
   /**
+   * 返回小程序交易组件-商家入驻服务接口
+   */
+  WxMaShopAccountService getShopAccountService();
+
+  /**
    * 返回小程序交易组件-订单服务接口
    * @return
    */

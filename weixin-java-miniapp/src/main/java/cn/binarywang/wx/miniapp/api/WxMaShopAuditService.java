@@ -15,7 +15,7 @@ import me.chanjar.weixin.common.error.WxErrorException;
 public interface WxMaShopAuditService {
   /**
    * 上传类目资质/类目审核
-   * <p></p>
+   * <br/>
    * <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent2/API/audit/audit_category.html">文档地址</a>
    *
    * @param audit 请求参数
@@ -26,7 +26,7 @@ public interface WxMaShopAuditService {
 
   /**
    * 上传类品牌信息/品牌审核
-   * <p></p>
+   * <br/>
    * <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent2/API/audit/audit_brand.html">文档地址</a>
    *
    * @param audit 请求参数
@@ -37,7 +37,7 @@ public interface WxMaShopAuditService {
 
   /**
    * 获取审核结果
-   * <p></p>
+   * <br/>
    * <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent2/API/audit/audit_result.html">文档地址</a>
    *
    * @param auditId 提交审核时返回的id
@@ -48,7 +48,7 @@ public interface WxMaShopAuditService {
 
   /**
    * 获取小程序提交过的入驻资质信息
-   * <p></p>
+   * <br/>
    * <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent2/API/audit/get_miniapp_certificate.html">文档地址</a>
    *
    * @param reqType 请求类型 1:类目 2:品牌

@@ -65,6 +65,7 @@ public abstract class BaseWxMaServiceImpl<H, P> implements WxMaService, RequestH
   private final WxImgProcService imgProcService = new WxMaImgProcServiceImpl(this);
   private final WxMaShopCategoryService shopCategoryService = new WxMaShopCategoryServiceImpl(this);
   private final WxMaShopAuditService shopAuditService = new WxMaShopAuditServiceImpl(this);
+  private final WxMaShopAccountService shopAccountService = new WxMaShopAccountServiceImpl(this);
   private final WxMaShopSpuService shopSpuService = new WxMaShopSpuServiceImpl(this);
   private final WxMaShopOrderService shopOrderService = new WxMaShopOrderServiceImpl(this);
   private final WxMaLinkService linkService = new WxMaLinkServiceImpl(this);
@@ -516,6 +517,11 @@ public abstract class BaseWxMaServiceImpl<H, P> implements WxMaService, RequestH
   @Override
   public WxMaShopAuditService getShopAuditService() {
     return this.shopAuditService;
+  }
+
+  @Override
+  public WxMaShopAccountService getShopAccountService() {
+    return this.shopAccountService;
   }
 
   @Override

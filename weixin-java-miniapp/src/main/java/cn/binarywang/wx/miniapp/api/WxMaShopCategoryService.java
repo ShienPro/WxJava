@@ -14,7 +14,7 @@ import java.util.List;
 public interface WxMaShopCategoryService {
   /**
    * 获取商品类目
-   * <p></p>
+   * <br/>
    * <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent2/API/cat/get_children_cateogry.html">文档地址</a>
    *
    * @return 所有三级商品类目

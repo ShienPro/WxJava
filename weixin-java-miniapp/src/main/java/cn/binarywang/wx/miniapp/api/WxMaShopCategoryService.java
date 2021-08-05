@@ -18,7 +18,7 @@ public interface WxMaShopCategoryService {
    * <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent2/API/cat/get_children_cateogry.html">文档地址</a>
    *
    * @return 所有三级商品类目
-   * @throws WxErrorException 生成失败时抛出，具体错误码请看文档
+   * @throws WxErrorException 获取失败时抛出，具体错误码请看文档
    */
   List<WxMaShopCatInfo> getCategory() throws WxErrorException;
 }

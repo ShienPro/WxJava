@@ -397,6 +397,12 @@ public interface WxMaService extends WxService {
   WxMaShopCategoryService getShopCategoryService();
 
   /**
+   * 返回小程序交易组件-审核服务接口
+   * @return
+   */
+  WxMaShopAuditService getShopAuditService();
+
+  /**
    * 返回小程序交易组件-订单服务接口
    * @return
    */

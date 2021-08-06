@@ -379,18 +379,21 @@ public interface WxMaService extends WxService {
 
   /**
    * 返回小程序交易组件-类目服务接口
-   * @return WxMaShopCategoryService
+   * @return shop category service
    */
   WxMaShopCategoryService getShopCategoryService();
 
   /**
    * 返回小程序交易组件-审核服务接口
-   * @return
+   *
+   * @return shop audit service
    */
   WxMaShopAuditService getShopAuditService();
 
   /**
    * 返回小程序交易组件-商家入驻服务接口
+   *
+   * @return shop account service
    */
   WxMaShopAccountService getShopAccountService();
 
@@ -405,6 +408,20 @@ public interface WxMaService extends WxService {
    * @return
    */
   WxMaShopSpuService getShopSpuService();
+
+  /**
+   * 返回小程序交易组件-物流服务接口
+   *
+   * @return shop delivery service
+   */
+  WxMaShopDeliveryService getWxMaShopDeliveryService();
+
+  /**
+   * 返回小程序交易组件-售后服务接口
+   *
+   * @return shop aftersale service
+   */
+  WxMaShopAftersaleService getShopAftersaleService();
 
   /**
    * 获取小程序 URL Link服务接口

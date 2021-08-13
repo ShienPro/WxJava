@@ -2,6 +2,7 @@ package cn.binarywang.wx.miniapp.bean.shop;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
@@ -17,8 +18,18 @@ import java.util.List;
  * @since 2021-08-05
  */
 @Data
+@NoArgsConstructor
 public class WxMaShopCategoryAudit implements Serializable {
   private static final long serialVersionUID = 3448053701754609593L;
+
+  public WxMaShopCategoryAudit(String license, Integer level1, Integer level2, Integer level3, List<String> certificate) {
+    this.license = license;
+    this.categoryInfo = new CategoryInfo();
+    this.categoryInfo.level1 = level1;
+    this.categoryInfo.level2 = level2;
+    this.categoryInfo.level3 = level3;
+    this.categoryInfo.certificate = certificate;
+  }
 
   /**
    * 营业执照或组织机构代码证，图片url
@@ -41,7 +52,7 @@ public class WxMaShopCategoryAudit implements Serializable {
      * 必填
      */
     @SerializedName("level1")
-    private   Integer level1;
+    private Integer level1;
     /**
      * 二级类目
      * <br/>

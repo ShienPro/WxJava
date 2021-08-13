@@ -87,6 +87,13 @@ public class WxMaAftersaleAddInfo implements Serializable {
   @SerializedName("status")
   private Integer status;
   /**
+   * 退款金额,单位：分
+   * <br/>
+   * 必填
+   */
+  @SerializedName("refund")
+  private Integer refund;
+  /**
    * 0:订单可继续售后
    * 1:订单无继续售后
    * <br/>

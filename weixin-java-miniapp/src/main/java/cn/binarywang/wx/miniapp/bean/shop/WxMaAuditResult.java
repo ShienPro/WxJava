@@ -22,7 +22,7 @@ public class WxMaAuditResult implements Serializable {
   @SerializedName("status")
   private Integer status;
   @SerializedName("brand_id")
-  private String brandId;
+  private Integer brandId;
   @SerializedName("reject_reason")
   private String rejectReason;
 }

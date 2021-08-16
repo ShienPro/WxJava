@@ -1,7 +1,6 @@
 package cn.binarywang.wx.miniapp.api;
 
 import cn.binarywang.wx.miniapp.bean.shop.WxMaShopDeliveryCompany;
-import cn.binarywang.wx.miniapp.bean.shop.WxMaShopDeliveryReceiveInfo;
 import cn.binarywang.wx.miniapp.bean.shop.WxMaShopSendDeliveryInfo;
 import me.chanjar.weixin.common.error.WxErrorException;
 
@@ -38,8 +37,10 @@ public interface WxMaShopDeliveryService {
    * <br/>
    * <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent2/API/delivery/recieve.html">文档地址</a>
    *
-   * @param receiveInfo 收货信息
+   * @param orderId    订单ID，与 outOrderId 二选一
+   * @param outOrderId 商家自定义订单ID，与 orderId 二选一
+   * @param openid     用户的openid
    * @throws WxErrorException 确认失败时抛出，具体错误码请看文档
    */
-  void receive(WxMaShopDeliveryReceiveInfo receiveInfo) throws WxErrorException;
+  void receive(Integer orderId, String outOrderId, String openid) throws WxErrorException;
 }

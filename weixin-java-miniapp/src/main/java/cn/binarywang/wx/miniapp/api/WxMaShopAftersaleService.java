@@ -3,7 +3,6 @@ package cn.binarywang.wx.miniapp.api;
 import cn.binarywang.wx.miniapp.bean.shop.WxMaAftersaleAddInfo;
 import cn.binarywang.wx.miniapp.bean.shop.WxMaAftersaleInfo;
 import cn.binarywang.wx.miniapp.bean.shop.WxMaAftersaleUpdateInfo;
-import cn.binarywang.wx.miniapp.bean.shop.WxMaShopAftersaleGetInfo;
 import me.chanjar.weixin.common.error.WxErrorException;
 
 import java.util.List;
@@ -30,11 +29,13 @@ public interface WxMaShopAftersaleService {
    * <br/>
    * <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent2/API/aftersale/get.html">文档地址</a>
    *
-   * @param queryInfo 售后查询信息
+   * @param orderId    订单ID，与 outOrderId 二选一
+   * @param outOrderId 商家自定义订单ID，与 orderId 二选一
+   * @param openid     用户的openid
    * @return 订单下的售后单
    * @throws WxErrorException 获取失败时抛出，具体错误码请看文档
    */
-  List<WxMaAftersaleInfo> get(WxMaShopAftersaleGetInfo queryInfo) throws WxErrorException;
+  List<WxMaAftersaleInfo> get(Integer orderId, String outOrderId, String openid) throws WxErrorException;
 
   /**
    * 更新售后

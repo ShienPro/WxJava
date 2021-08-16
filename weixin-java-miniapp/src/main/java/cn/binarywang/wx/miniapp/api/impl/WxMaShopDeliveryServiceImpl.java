@@ -3,7 +3,6 @@ package cn.binarywang.wx.miniapp.api.impl;
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.api.WxMaShopDeliveryService;
 import cn.binarywang.wx.miniapp.bean.shop.WxMaShopDeliveryCompany;
-import cn.binarywang.wx.miniapp.bean.shop.WxMaShopDeliveryReceiveInfo;
 import cn.binarywang.wx.miniapp.bean.shop.WxMaShopSendDeliveryInfo;
 import cn.binarywang.wx.miniapp.constant.WxMaApiUrlConstants;
 import cn.binarywang.wx.miniapp.json.WxMaGsonBuilder;
@@ -11,6 +10,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import lombok.RequiredArgsConstructor;
 import me.chanjar.weixin.common.error.WxErrorException;
+import me.chanjar.weixin.common.util.json.GsonHelper;
 import me.chanjar.weixin.common.util.json.GsonParser;
 
 import java.lang.reflect.Type;
@@ -40,7 +40,12 @@ public class WxMaShopDeliveryServiceImpl implements WxMaShopDeliveryService {
   }
 
   @Override
-  public void receive(WxMaShopDeliveryReceiveInfo receiveInfo) throws WxErrorException {
+  public void receive(Integer orderId, String outOrderId, String openid) throws WxErrorException {
+    JsonObject receiveInfo = GsonHelper.buildJsonObject(
+      "order_id", orderId,
+      "out_order_id", outOrderId,
+      "openid", openid
+    );
     this.service.post(WxMaApiUrlConstants.Shop.Delivery.RECIEVE, receiveInfo);
   }
 }

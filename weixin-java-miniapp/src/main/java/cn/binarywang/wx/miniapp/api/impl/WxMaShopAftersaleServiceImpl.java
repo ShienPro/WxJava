@@ -5,13 +5,13 @@ import cn.binarywang.wx.miniapp.api.WxMaShopAftersaleService;
 import cn.binarywang.wx.miniapp.bean.shop.WxMaAftersaleAddInfo;
 import cn.binarywang.wx.miniapp.bean.shop.WxMaAftersaleInfo;
 import cn.binarywang.wx.miniapp.bean.shop.WxMaAftersaleUpdateInfo;
-import cn.binarywang.wx.miniapp.bean.shop.WxMaShopAftersaleGetInfo;
 import cn.binarywang.wx.miniapp.constant.WxMaApiUrlConstants;
 import cn.binarywang.wx.miniapp.json.WxMaGsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import lombok.RequiredArgsConstructor;
 import me.chanjar.weixin.common.error.WxErrorException;
+import me.chanjar.weixin.common.util.json.GsonHelper;
 import me.chanjar.weixin.common.util.json.GsonParser;
 
 import java.lang.reflect.Type;
@@ -34,7 +34,12 @@ public class WxMaShopAftersaleServiceImpl implements WxMaShopAftersaleService {
   }.getType();
 
   @Override
-  public List<WxMaAftersaleInfo> get(WxMaShopAftersaleGetInfo queryInfo) throws WxErrorException {
+  public List<WxMaAftersaleInfo> get(Integer orderId, String outOrderId, String openid) throws WxErrorException {
+    JsonObject queryInfo = GsonHelper.buildJsonObject(
+      "order_id", orderId,
+      "out_order_id", outOrderId,
+      "openid", openid
+    );
     String responseContent = this.service.post(WxMaApiUrlConstants.Shop.Aftersale.GET, queryInfo);
     JsonObject jsonObject = GsonParser.parse(responseContent);
     return WxMaGsonBuilder.create().fromJson(jsonObject.get("aftersale_infos"), AFTERSALE_LIST_TYPE);
